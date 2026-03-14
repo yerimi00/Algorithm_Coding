@@ -32,3 +32,20 @@
 
  <p>첫째 줄에 최댓값을 출력하고, 둘째 줄에 최댓값이 몇 번째 수인지를 출력한다.</p>
 
+
+### sudo 코드
+
+```
+A 리스트
+M 변수
+number 변수
+
+for i in range(9):
+    if M<A[i]:
+        M = A[i]
+        number = i
+println(M)
+print()
+
+```
+
