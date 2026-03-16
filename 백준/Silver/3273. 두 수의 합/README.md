@@ -26,3 +26,47 @@
 
  <p>문제의 조건을 만족하는 쌍의 개수를 출력한다.</p>
 
+### sudo 코드 - 생각 1
+
+```
+S = 갯수 입력
+A 리스트 입력
+x 숫자 입력
+L = A[i]-x 들 리스트
+
+for i in A:
+    #A[i]-x 리스트에 A[i] 숫자가 있는지 체크
+```
+
+### sudo 코드 - 생각 2 : 시간 복잡도 줄이는 버전
+
+```
+n 입력
+A 리스트 입력
+x 입력
+A 정렬
+count = 0
+left = 0
+right = n-1
+
+while left < right:
+    if A[left] + A[right] == x:
+        count++
+        left++
+        right--
+    elif A[left] + A[right] < x:
+        left++
+    else:
+        right--
+
+print(count)
+```
+
+-> 투 포인터 (O(n log n))
+
+- 정렬 후 양 끝에서 포인터를 좁혀가며 탐색
+- 합이 x면 count 증가, 양쪽 포인터 이동
+- 합이 x보다 작으면 left를 오른쪽으로 (합을 키움)
+- 합이 x보다 크면 right를 왼쪽으로 (합을 줄임)
+
+생각 1 O(n²) vs 생각 2 O(n log n) (정렬) + O(n) (탐색)
