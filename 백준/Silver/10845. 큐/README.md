@@ -37,3 +37,43 @@
 
  <p>출력해야하는 명령이 주어질 때마다, 한 줄에 하나씩 출력한다.</p>
 
+
+### 생각
+
+- push: 큐 뒤에 추가 -> append()
+- pop: 큐 앞에서 제거 후 출력, 비어있으면 -1 -> popleft()
+- front: 큐 앞 요소 출력, 비어있으면 -1 -> [0]
+- back: 큐 뒤 요소 출력, 비어있으면 -1 →->[-1]
+- size, empty: 스택과 동일
+
+### sudo 코드
+
+```
+n 입력
+queue = deque()
+
+for i in range(n):
+    cmd 입력
+
+    if cmd == "push X":
+        queue 뒤에 X 추가
+    elif cmd == "pop":
+        if queue 비어있으면:
+            print(-1)
+        else:
+            queue 앞 요소 제거 후 출력
+    elif cmd == "size":
+        queue 길이 출력
+    elif cmd == "empty":
+        비어있으면 1, 아니면 0 출력
+    elif cmd == "front":
+        if queue 비어있으면:
+            print(-1)
+        else:
+            queue[0] 출력
+    elif cmd == "back":
+        if queue 비어있으면:
+            print(-1)
+        else:
+            queue[-1] 출력
+```
