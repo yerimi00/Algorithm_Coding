@@ -28,3 +28,36 @@
 
  <p>출력은 표준 출력을 사용한다. 만일 입력 괄호 문자열이 올바른 괄호 문자열(VPS)이면 “YES”, 아니면 “NO”를 한 줄에 하나씩 차례대로 출력해야 한다. </p>
 
+### 생각
+
+- '(' 나오면 스택에 push
+- ')' 나오면:
+  - 스택이 비어있으면 -> NO
+  - 아니면 스택에서 pop
+- 문자열 끝까지 돌고 스택이 비어있으면 -> YES, 아니면 -> NO
+
+### sudo 코드
+
+```
+T 입력
+
+for i in range(T):
+    s 문자열 입력
+    stack = []
+    valid = True
+
+    for c in s:
+        if c == '(':
+            stack에 push
+        else:  # c == ')'
+            if stack이 비어있으면:
+                valid = False
+                break
+            else:
+                stack에서 pop
+
+    if valid and stack이 비어있으면:
+        print("YES")
+    else:
+        print("NO")
+```
