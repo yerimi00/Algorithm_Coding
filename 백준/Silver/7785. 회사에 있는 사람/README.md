@@ -32,3 +32,26 @@
 
  <p>현재 회사에 있는 사람의 이름을 사전 순의 역순으로 한 줄에 한 명씩 출력한다.</p>
 
+### 생각
+
+- set 사용
+- enter -> set에 추가
+- leave -> set에서 제거
+- 마지막에 set에 남은 사람 = 현재 회사에 있는 사람
+- 역순 알파벳으로 정렬 후 출력
+
+### sudo 코드
+
+```
+n 입력
+office = set()
+
+for i in range(n):
+    name, status 입력
+    if status == "enter":
+        office에 name 추가
+    else:
+        office에서 name 제거
+
+office를 역순 정렬 후 한 명씩 출력
+```
