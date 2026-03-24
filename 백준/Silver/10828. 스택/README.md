@@ -36,3 +36,42 @@
 
  <p>출력해야하는 명령이 주어질 때마다, 한 줄에 하나씩 출력한다.</p>
 
+
+
+ ### 생각
+
+push: append()
+pop: 비어있으면 -1, 아니면 [-1] 출력 후 제거
+top: 비어있으면 -1, 아니면 [-1] 출력 (제거 안 함)
+
+### sudo 코드
+
+```
+n 입력
+stack = []
+
+for i in range(n):
+    cmd 입력
+
+    if cmd == "push X":
+        stack에 X 추가
+    elif cmd == "pop":
+        if stack이 비어있으면:
+            print(-1)
+        else:
+            stack 마지막 요소 제거 후 출력
+    elif cmd == "size":
+        stack 길이 출력
+    elif cmd == "empty":
+        if stack이 비어있으면:
+            print(1)
+        else:
+            print(0)
+    elif cmd == "top":
+        if stack이 비어있으면:
+            print(-1)
+        else:
+            stack 마지막 요소 출력
+```
+
+
