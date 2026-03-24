@@ -26,3 +26,41 @@
 
  <p>M개의 줄에 답을 출력한다. 존재하면 1을, 존재하지 않으면 0을 출력한다.</p>
 
+### 생각
+
+- N개 수를 set에 저장 -> 탐색 O(1)
+- M개 수를 하나씩 set에 있는지 확인
+- 있으면 1, 없으면 0 출력
+
+### sudo 코드
+
+```
+n 입력
+A = set(n개 수)
+m 입력
+
+for i in range(m):
+    x 입력
+    if x in A:
+        print(1)
+    else:
+        print(0)
+```
+
+### 런타임 에러 발생 코드 및 이유
+
+```
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+A = set(map(int, input().split()))
+m = int(input())
+
+for _ in range(m):
+    x = int(input())
+    print(1 if x in A else 0)
+```
+
+-> 이유 : M개의 수가 한 줄에 공백으로 주어지는데, 한 줄씩 읽고 있어서 에러가 남
+-> 해결방법 : M개 수도 한 줄에 다 받아서 처리하도록 수정
